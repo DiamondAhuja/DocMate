@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocMate</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2em;
+        background-color: #f9f9f9;
+      }
+      h1 {
+        text-align: center;
+      }
+      form {
+        text-align: center;
+        margin-top: 2em;
+      }
+      input[type="file"] {
+        margin: 1em 0;
+      }
+      button {
+        padding: 0.5em 2em;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Upload Excel File</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <label for="file">Choose Excel File:</label>
+      <input type="file" id="file" name="file" accept=".xlsx" required />
+      <button type="submit">Upload and Process</button>
+    </form>
+  </body>
+</html>
