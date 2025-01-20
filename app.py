@@ -71,6 +71,18 @@ def process_file(excel_file, word_template, output_file):
                 for paragraph in cell.paragraphs:
                     replace_placeholder_in_paragraph(paragraph, data_mapping)
 
+    # Replace placeholders in headers
+    for section in doc.sections:
+        header = section.header
+        for paragraph in header.paragraphs:
+            replace_placeholder_in_paragraph(paragraph, data_mapping)
+
+    # Replace placeholders in footers
+    for section in doc.sections:
+        footer = section.footer
+        for paragraph in footer.paragraphs:
+            replace_placeholder_in_paragraph(paragraph, data_mapping)
+
     # Save the updated Word file
     doc.save(output_file)
 
